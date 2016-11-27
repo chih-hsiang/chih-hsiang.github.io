@@ -6,7 +6,8 @@
 }
 #profile{
   width:1000px;
-  background-color:#ffff00
+  background-color:#ffff00;
+  padding:10px;
 }
 #inside{
   padding-top:70px;
