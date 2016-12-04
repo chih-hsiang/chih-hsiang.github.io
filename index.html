@@ -37,8 +37,11 @@
       <div class="container">
         <div class="row">
           <h1>嗨</h1>
-          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#with">
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#withMine">
             關於
+          </button>
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#moreWithMine">
+            更多
           </button>
         </div>
         <div class="row">
@@ -103,7 +106,7 @@
         </div>
       </div>
     </div>
-    <div class="modal fade" id="with" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="withMine" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -115,6 +118,22 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="moreWithMine" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">更多的訊息</h4>
+          </div>
+          <div class="modal-body">
+            還要更多?沒有了啦!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">滾!</button>
           </div>
         </div>
       </div>
