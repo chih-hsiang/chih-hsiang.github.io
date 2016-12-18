@@ -7,12 +7,17 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("04db2");
       var studentCollection = db.collection('students');
-      var newStudent = {
-        name: "fxxk",
-        age: 666
-      };
+      function* stu(age,name){
+        this.age = age;
+        this.name = name;
+      }
+      var stu1 = new stu(apple,1);
+      var stu2 = new stu(pen,2);
+
       
-      studentCollection.insert(newStudent);
+      studentCollection.insert(stu1);
+      studentCollection.insert(stu2);
+      console.log(studentCollection.find());
     </script>
   </body>
 </html>
