@@ -7,7 +7,7 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("04db2");
       var studentCollection = db.collection('students');
-      function* stu(age,name,gender,id){
+      function stu(age,name,gender,id){
         this.age = age;
         this.name = name;
         this.gender = gender;
