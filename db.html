@@ -3,5 +3,16 @@
     <script src="js/fdb-all.min.js"></script>
   </head>
   <body>
+    <script>
+      var fdb = new ForerunnerDB();
+      var db = fdb.db("04db2");
+      var studentCollection = db.collection('students');
+      var newStudent = {
+        name: "fxxk",
+        age: 666
+      };
+      
+      studentCollection.insert(newStudent);
+    </script>
   </body>
 </html>
