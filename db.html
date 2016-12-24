@@ -7,22 +7,22 @@
       function rnd(min, max) {
         return Math.floor(Math.random() * max) + min;
       }
-      var name = ["apple","pen","pineapple","ppap","fool"];
-      var subject = ["English","Math","Chinese","History"];
-      var gender = ["male","female"];
+      var names = ["apple","pen","pineapple","ppap","fool"];
+      var subjects = ["English","Math","Chinese","History"];
+      var genders = ["male","female"];
       var fdb = new ForerunnerDB();
       var db = fdb.db("04db2");
       var studentCollection = db.collection('students');
       var scoreCollection = db.collection('scores');
       function stu(age,name,gender,id){
         this.age = age;
-        this.name = name[name];
-        this.gender = gender[gender];
+        this.name = names[name];
+        this.gender = genders[gender];
         this.id = id;
       }
       function score(id,subject,number){
         this.id = id;
-        this.subject = subject[subject];
+        this.subject = subjects[subject];
         this.number = number;
       }
       function saveInfo(){
