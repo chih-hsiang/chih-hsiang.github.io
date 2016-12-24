@@ -25,6 +25,21 @@
         this.subject = subject;
         this.number = number;
       }
+      function saveInfo(){
+        studentCollection.save();
+        scoreCollection.save();
+      }
+      function loadInfo(){
+        studentCollection.load();
+        scoreCollection.load();
+      }
+      function read(){
+        for(var i = 0;i < studentCollection.find().length;i = i+1){
+          console.log(studentCollection.find()[i]);
+        }
+        console.log(studentCollection.find().length);
+        console.log(scoreCollection.find().length);
+      }
     </script>
   </body>
 </html>
