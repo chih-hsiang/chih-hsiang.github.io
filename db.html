@@ -7,9 +7,9 @@
       function rnd(min, max) {
         return Math.floor(Math.random() * max) + min;
       }
-      var name = [apple,pen,pineapple,ppap,fool];
-      var subject = [English,Math,Chinese,History];
-      var gender = [male,female];
+      var name = ["apple","pen","pineapple","ppap","fool"];
+      var subject = ["English","Math","Chinese","History"];
+      var gender = ["male","female"];
       var fdb = new ForerunnerDB();
       var db = fdb.db("04db2");
       var studentCollection = db.collection('students');
