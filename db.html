@@ -35,6 +35,7 @@
       }
       function read(){
         for(var i = 0;i < studentCollection.find().length;i = i+1){
+          studentCollection.find()[i]['id'] = i;
           console.log(studentCollection.find()[i]);
         }
         console.log("學生人數:"+studentCollection.find().length);
