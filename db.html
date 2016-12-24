@@ -4,22 +4,27 @@
   </head>
   <body>
     <script>
+      function rnd(min, max) {
+        return Math.floor(Math.random() * max) + min;
+      }
+      var name = [apple,pen,pineapple,ppap,fool];
+      var subject = [English,Math,Chinese,History];
+      var gender = [male,female];
       var fdb = new ForerunnerDB();
       var db = fdb.db("04db2");
       var studentCollection = db.collection('students');
+      var scoreCollection = db.collection('scores');
       function stu(age,name,gender,id){
         this.age = age;
         this.name = name;
         this.gender = gender;
         this.id = id;
       }
-      var stu1 = new stu("apple",10,"female",1);
-      var stu2 = new stu("pen",12,"male",1);
-
-      
-      studentCollection.insert(stu1);
-      studentCollection.insert(stu2);
-      console.log(studentCollection.find()[0]);
+      function score(id,subject,number){
+        this.id = id;
+        this.subject = subject;
+        this.number = number;
+      }
     </script>
   </body>
 </html>
