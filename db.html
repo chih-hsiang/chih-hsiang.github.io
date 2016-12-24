@@ -16,13 +16,13 @@
       var scoreCollection = db.collection('scores');
       function stu(age,name,gender,id){
         this.age = age;
-        this.name = name;
-        this.gender = gender;
+        this.name = name[name];
+        this.gender = gender[gender];
         this.id = id;
       }
       function score(id,subject,number){
         this.id = id;
-        this.subject = subject;
+        this.subject = subject[subject];
         this.number = number;
       }
       function saveInfo(){
