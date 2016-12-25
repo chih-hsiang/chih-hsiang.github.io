@@ -14,16 +14,16 @@
       var db = fdb.db("04db2");
       var studentCollection = db.collection('students');
       var scoreCollection = db.collection('scores');
-      function stu(age,name,gender,id){
-        this.age = age;
-        this.name = names[name];
-        this.gender = genders[gender];
-        this.id = id;
+      function stu(){
+        this.age = rnd(0,100);
+        this.name = names[rnd(0,4)];
+        this.gender = genders[rnd(0,1)];
+        this.id = rnd(1,10);
       }
       function score(id,subject,number){
-        this.id = id;
-        this.subject = subjects[subject];
-        this.number = number;
+        this.id = rnd(1,10);
+        this.subject = subjects[rnd(0,3)];
+        this.number = rnd(0,100);
       }
       function saveInfo(){
         studentCollection.save();
