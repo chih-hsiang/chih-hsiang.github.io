@@ -14,6 +14,12 @@
       var db = fdb.db("04db2");
       var studentCollection = db.collection('students');
       var scoreCollection = db.collection('scores');
+      function newStudent(num){
+        for(var i = 0;i < num;i = i+1){
+          var Stu = new stu();
+          studentCollection.insert(Stu);
+        }
+      }
       function stu(){
         this.age = rnd(0,100);
         this.name = names[rnd(0,4)];
