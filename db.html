@@ -28,6 +28,8 @@
       function rnd(min, max) {
         return Math.floor(Math.random() * max) + min;
       }
+      var count = 0;
+      var stuNum = 0;
       var names = ["apple","pen","pineapple","ppap","fool"];
       var subjects = ["English","Math","Chinese","History"];
       var genders = ["male","female"];
@@ -37,24 +39,25 @@
       var scoreCollection = db.collection('scores');
       function newStudent(num){
         for(var i = 0;i < num;i = i+1){
-          var Stu = new stu();
+          var Stu = new stu(i);
+          stuNum = stuNum + 1;
           studentCollection.insert(Stu);
         }
       }
       function newScore(num){
-        for(var i = 0;i < num;i = i+1){
+        for(var i = 1;i <= num;i = i+1){
           var Score = new score();
           scoreCollection.insert(Score);
         }
       }
-      function stu(){
+      function stu(id){
         this.age = rnd(0,100);
         this.name = names[rnd(0,4)];
         this.gender = genders[rnd(0,1)];
-        this.id = rnd(1,10);
+        this.id = id;
       }
       function score(){
-        this.id = rnd(1,10);
+        this.id = rnd(1,50);
         this.subject = subjects[rnd(0,3)];
         this.number = rnd(0,100);
       }
@@ -63,15 +66,18 @@
         scoreCollection.save();
       }
       function loadInfo(){
-        studentCollection.load();
-        scoreCollection.load();
+        studentCollection.load(read);
+        scoreCollection.load(read);
       }
       function read(){
+        count+=1;
+        if(count >= 2){
         for(var i = 0;i < studentCollection.find().length;i = i+1){
           console.log(studentCollection.find()[i]);
         }
         console.log("學生人數:"+studentCollection.find().length);
         console.log("分數總量:"+scoreCollection.find().length);
+      }
       }
     </script>
   </body>
