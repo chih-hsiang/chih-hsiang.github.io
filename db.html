@@ -14,14 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>3</td>
-          <td>apple</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>pen</td>
-        </tr>
+        
       </tbody>
     </table>
     <script>
@@ -38,14 +31,11 @@
       var studentCollection = db.collection('students');
       var scoreCollection = db.collection('scores');
       function newStudent(num){
-        for(var i = stuNum+1;i <= num;i = i+1){
+        for(var i = 1;i <= num;i = i+1){
           var Stu = new stu(i);
           stuNum = stuNum + 1;
           studentCollection.insert(Stu);
         }
-      }
-      function plus(){
-        var stuNum = studentCollection.find().length;
       }
       function newScore(num){
         for(var i = 0;i < num;i = i+1){
@@ -69,7 +59,7 @@
         scoreCollection.save();
       }
       function loadInfo(){
-        studentCollection.load(read,plus);
+        studentCollection.load(read);
         scoreCollection.load(read);
       }
       function read(){
