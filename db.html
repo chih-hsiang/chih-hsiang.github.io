@@ -68,7 +68,7 @@
         var s = studentCollection.find()
         if(count >= 2){
         for(var i = 0;i < studentCollection.find().length;i = i+1){
-          $("tbody").append("<tr><td>"+s[i]['id']+"</td><td>"+s[i]['name']+"</td><td>"+'<a class="btn btn-default" data-id="'i+1'">detail</a>'+"</td></tr>");
+          $("tbody").append("<tr><td>"+s[i]['id']+"</td><td>"+s[i]['name']+"</td><td>"+'<a class="btn btn-default" data-id="'+s[i]['id']+'">detail</a>'+"</td></tr>");
         }
         console.log("學生人數:"+studentCollection.find().length);
         console.log("分數總量:"+scoreCollection.find().length);
