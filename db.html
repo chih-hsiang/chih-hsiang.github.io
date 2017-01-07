@@ -53,7 +53,7 @@
         this.id = id;
       }
       function score(){
-        this.id = rnd(1,50);
+        this.id = rnd(1,studentCollection.find().length);
         this.subject = subjects[rnd(0,3)];
         this.number = rnd(0,100);
       }
@@ -74,7 +74,12 @@
         }
         console.log("學生人數:"+studentCollection.find().length);
         console.log("分數總量:"+scoreCollection.find().length);
+        }
       }
+      $("body").on("click", ".btn", function(event){
+        var id = $(this).attr("data-id") / 1;
+        var stuScore = db.collection("scores").find({id: id})[0];
+        console.log(stuScore);
       }
     </script>
   </body>
