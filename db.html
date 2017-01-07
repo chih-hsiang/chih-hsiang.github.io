@@ -32,6 +32,7 @@
       var studentCollection = db.collection('students');
       var scoreCollection = db.collection('scores');
       loadInfo();
+      $('body').on("click",".btn")
       function newStudent(num){
         for(var i = 1;i <= num;i = i+1){
           var Stu = new stu(i);
