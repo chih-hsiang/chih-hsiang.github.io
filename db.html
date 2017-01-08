@@ -80,8 +80,8 @@
         var stuScore = db.collection("scores").find({id: id});
         var allScore = 0;
         for(var i = 0;i < stuScore.length;i+=1){
-          allScore+=stuScore[i].score;
-          console.log(stuScore[i].score);
+          allScore+=stuScore[i].number;
+          console.log(stuScore[i].number);
         }
         alert("總分:"+allScore+"平均:"+allScore / stuScore.length);
       });
