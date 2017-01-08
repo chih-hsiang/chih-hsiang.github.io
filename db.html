@@ -19,15 +19,20 @@
       </tbody>
     </table>
       性別:<br>
-      <input type="text" name="gender"><br>
+      <input id="gender" type="text" name="gender"><br>
       名子:<br>
-      <input type="text" name="student"><br>
+      <input id="name" type="text" name="student"><br>
       年齡:<br>
-      <input type="text" name="age"><br>
+      <input id="age" type="text" name="age"><br>
       <input id="submit" type="submit" value="輸入">
     <script>
+      var last = 0;
       function rnd(min, max) {
         return Math.floor(Math.random() * max) + min;
+      }
+      $("#submit").click(input);
+      function submit(){
+        var Stu = new stu($("#name").val(),$("#gender").val(),$("#age").val(),last);
       }
       var count = 0;
       var stuNum = 0;
@@ -52,6 +57,13 @@
           scoreCollection.insert(Score);
         }
       }
+      function subStu(name,gender,age,id){
+        this.age = age;
+        this.name = name;
+        this.gender = gender;
+        this.id = id;
+        
+      }
       function stu(id){
         this.age = rnd(0,100);
         this.name = names[rnd(0,4)];
@@ -73,10 +85,9 @@
       }
       function read(){
         var length = studentCollection.find().length;
-        var last = studentCollection.find()[length-1].id
-        console.log(last);
+        var last = studentCollection.find()[length-1].id;
         count+=1;
-        var s = studentCollection.find()
+        var s = studentCollection.find();
         if(count >= 2){
         for(var i = 0;i < studentCollection.find().length;i = i+1){
           $("tbody").append("<tr><td>"+s[i]['id']+"</td><td>"+s[i]['name']+"</td><td>"+'<a class="btn btn-default" data-id="'+s[i]['id']+'">detail</a>'+"</td></tr>");
