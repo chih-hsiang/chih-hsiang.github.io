@@ -33,7 +33,12 @@
       }
       $("#submit").click(submit);
       function submit(){
-        var Stu = new subStu($("#name").val(),$("#gender").val(),$("#age").val(),last+1);
+        if($($("input[name=gender]")[0]).prop("checked")){
+          var gender = male;
+        }else if($($("input[name=gender]")[1]).prop("checked")){
+          var gender = female;
+        }
+        var Stu = new subStu($("#name").val(),gender,$("#age").val(),last+1);
         studentCollection.insert(Stu);
         saveInfo();
         $("#name").val("");
