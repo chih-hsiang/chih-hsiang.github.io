@@ -81,9 +81,8 @@
         var allScore = 0;
         for(var i = 0;i < stuScore.length;i+=1){
           allScore+=stuScore[i].number;
-          console.log(stuScore[i].number);
         }
-        alert("總分:"+allScore+"平均:"+allScore / stuScore.length);
+        alert("總分:"+allScore+"平均:"+Math.round(allScore / stuScore.length,0));
       });
     </script>
   </body>
