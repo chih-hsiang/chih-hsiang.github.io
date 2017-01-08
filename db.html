@@ -34,7 +34,7 @@
       function submit(){
         var Stu = new subStu($("#name").val(),$("#gender").val(),$("#age").val(),last+1);
         studentCollection.insert(Stu);
-        saveInfo;
+        saveInfo();
         var length = studentCollection.find().length;
         last = studentCollection.find()[length-1].id;
       }
