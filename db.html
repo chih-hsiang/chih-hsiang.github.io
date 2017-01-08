@@ -73,7 +73,7 @@
       }
       function read(){
         var length = studentCollection.find().length;
-        var last = studentCollection.find()[length].id
+        var last = studentCollection.find()[length-1].id
         console.log(last);
         count+=1;
         var s = studentCollection.find()
