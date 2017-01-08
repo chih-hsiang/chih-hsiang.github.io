@@ -70,12 +70,14 @@
           stuNum = stuNum + 1;
           studentCollection.insert(Stu);
         }
+        saveInfo();
       }
       function newScore(num){
         for(var i = 0;i < num;i = i+1){
           var Score = new score();
           scoreCollection.insert(Score);
         }
+        saveInfo();
       }
       function subStu(name,gender,age,id){
         this.age = age;
