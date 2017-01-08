@@ -34,10 +34,10 @@
       $("#submit").click(submit);
       function submit(){
         if($($("input[name=gender]")[0]).prop("checked")){
-          var gender = male;
+          var gender = "male";
           $($("input[name=gender]")[0]).prop("checked",false);
         }else if($($("input[name=gender]")[1]).prop("checked")){
-          var gender = female;
+          var gender = "female";
           $($("input[name=gender]")[1]).prop("checked",false);
         }else{
           alert("資料不足");
