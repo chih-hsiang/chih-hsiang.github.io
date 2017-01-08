@@ -32,7 +32,7 @@
       }
       $("#submit").click(submit);
       function submit(){
-        var Stu = new stu($("#name").val(),$("#gender").val(),$("#age").val(),last);
+        var Stu = new subStu($("#name").val(),$("#gender").val(),$("#age").val(),last+1);
         studentCollection.insert(Stu);
         saveInfo;
         var length = studentCollection.find().length;
