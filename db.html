@@ -78,7 +78,7 @@
       }
       $("body").on("click", ".btn", function(event){
         var id = $(this).attr("data-id") / 1;
-        var stuScore = db.collection("scores").find({id: id})[0];
+        var stuScore = db.collection("scores").find({id: id});
         console.log(stuScore);
       });
     </script>
