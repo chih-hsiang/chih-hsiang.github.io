@@ -35,6 +35,9 @@
         var Stu = new subStu($("#name").val(),$("#gender").val(),$("#age").val(),last+1);
         studentCollection.insert(Stu);
         saveInfo();
+        $("#name").val("");
+        $("#gender").val("");
+        $("#age").val("");
         var s = studentCollection.find();
         var length = studentCollection.find().length;
         last = studentCollection.find()[length-1].id;
