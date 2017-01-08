@@ -30,9 +30,13 @@
       function rnd(min, max) {
         return Math.floor(Math.random() * max) + min;
       }
-      $("#submit").click(input);
+      $("#submit").click(submit);
       function submit(){
         var Stu = new stu($("#name").val(),$("#gender").val(),$("#age").val(),last);
+        studentCollection.insert(Stu);
+        saveInfo;
+        var length = studentCollection.find().length;
+        last = studentCollection.find()[length-1].id;
       }
       var count = 0;
       var stuNum = 0;
@@ -85,7 +89,7 @@
       }
       function read(){
         var length = studentCollection.find().length;
-        var last = studentCollection.find()[length-1].id;
+        last = studentCollection.find()[length-1].id;
         count+=1;
         var s = studentCollection.find();
         if(count >= 2){
