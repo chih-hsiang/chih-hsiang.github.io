@@ -138,6 +138,7 @@
         var id = $(this).attr("data-id") / 1;
         console.log(id);
         studentCollection.remove({id: id});
+        $(this).closest("tr").remove();
         saveInfo();
       });
     </script>
