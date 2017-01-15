@@ -53,6 +53,9 @@
         var s = studentCollection.find();
         var length = studentCollection.find().length;
         last = studentCollection.find()[length-1].id;
+        if(last===undefined){
+          last = 0;
+        }
         $("tbody").append("<tr><td>"+s[length-1]['id']+"</td><td>"+s[length-1]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[length-1]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[length-1]['id']+'">delete</a>'+"</td></tr>");
       }
       var count = 0;
@@ -109,6 +112,9 @@
       function read(){
         var length = studentCollection.find().length;
         last = studentCollection.find()[length-1].id;
+        if(last===undefined){
+          last = 0;
+        }
         count+=1;
         var s = studentCollection.find();
         if(count >= 2){
