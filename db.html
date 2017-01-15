@@ -16,7 +16,14 @@
         </tr>
       </thead>
       <tbody>
-        
+        <div class = template>
+          <tr>
+            <td>{id}</td>
+            <td>{name}</td>
+            <td><a class="btn btn-default detail" data-id={id}>detail</a></td>
+            <td><a class="btn btn-default delete" data-id={id}>delete</a></td>
+          </tr>
+        </div>
       </tbody>
     </table>
       性別:<br>
@@ -58,6 +65,7 @@
         }
         $("tbody").append("<tr><td>"+s[length-1]['id']+"</td><td>"+s[length-1]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[length-1]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[length-1]['id']+'">delete</a>'+"</td></tr>");
       }
+      $(".template").hide();
       var count = 0;
       var stuNum = 0;
       var names = ["apple","pen","pineapple","ppap","fool"];
