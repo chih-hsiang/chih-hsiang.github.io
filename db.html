@@ -120,9 +120,7 @@
         if(count >= 2){
         for(var i = 0;i < studentCollection.find().length;i = i+1){
           $("tbody").append("<tr><td>"+s[i]['id']+"</td><td>"+s[i]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[i]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[i]['id']+'">delete</a>'+"</td></tr>");
-        }
-        console.log("學生人數:"+studentCollection.find().length);
-        console.log("分數總量:"+scoreCollection.find().length);
+          }
         }
       }
       $("body").on("click", ".detail", function(event){
