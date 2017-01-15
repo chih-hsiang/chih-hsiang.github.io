@@ -139,7 +139,7 @@
         if(sure){
           var id = $(this).attr("data-id") / 1;
           studentCollection.remove({id: id});
-          scoreColletion.remove({id: id});
+          scoreCollection.remove({id: id});
           $(this).closest("tr").remove();
           saveInfo();
         }
