@@ -130,7 +130,7 @@
       });
       $("body").on("click", ".delete", function(event){
         var id = $(this).attr("data-id") / 1;
-        collection.remove({
+        studentcollection.remove({
           _id: id
         });
       });
