@@ -135,11 +135,14 @@
         alert("總分:"+allScore+"平均:"+Math.round(allScore / stuScore.length,0));
       });
       $("body").on("click", ".delete", function(event){
-        var id = $(this).attr("data-id") / 1;
-        console.log(id);
-        studentCollection.remove({id: id});
-        $(this).closest("tr").remove();
-        saveInfo();
+        var sure = confirm("你確定嗎?");
+        if(sure){
+          var id = $(this).attr("data-id") / 1;
+          console.log(id);
+          studentCollection.remove({id: id});
+          $(this).closest("tr").remove();
+          saveInfo();
+        }
       });
     </script>
   </body>
