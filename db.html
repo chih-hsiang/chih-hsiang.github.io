@@ -138,8 +138,8 @@
         var sure = confirm("你確定嗎?");
         if(sure){
           var id = $(this).attr("data-id") / 1;
-          console.log(id);
           studentCollection.remove({id: id});
+          scoreColletion.remove({id: id});
           $(this).closest("tr").remove();
           saveInfo();
         }
