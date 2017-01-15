@@ -53,7 +53,7 @@
         var s = studentCollection.find();
         var length = studentCollection.find().length;
         last = studentCollection.find()[length-1].id;
-        $("tbody").append("<tr><td>"+s[length-1]['id']+"</td><td>"+s[length-1]['name']+"</td><td>"+'<a class="btn btn-default" data-id="'+s[length-1]['id']+'">detail</a>'+"</td></tr>");
+        $("tbody").append("<tr><td>"+s[i]['id']+"</td><td>"+s[i]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[i]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[i]['id']+'">delete</a>'+"</td></tr>");
       }
       var count = 0;
       var stuNum = 0;
