@@ -77,6 +77,24 @@
       
     </div>
   </div>
-  
+  <script>
+    var fdb = new ForerunnerDB();
+    var db = fdb.db("54db2");
+    var contactsCollection = db.collection('contacts');
+    function contact(name,mail,phone,thing){
+      this.name = name;
+      this.mail = mail;
+      this.phone = phone;
+      this.thing = thing;
+      this.id = 1;
+    }
+    contactsCollection.load(read);
+    function read(){
+      var c = contactsCollection.find();
+      for(var i = 0;i < contactsCollection.find().length;i = i+1){
+          $("tbody").append("<tr><td>"+c[i]['name']+"</td><td>"+c[i]['email']+"</td><td>"+c[i]['phone']+"</td><td>"+'<a class="btn btn-default" data-id="'+c[i]['id']+'">detail</a>'+"</td></tr>");
+        }
+    }
+  </script>
 </body>
 </html>
