@@ -20,14 +20,33 @@
         
       </tbody>
     </table>
-      性別:<br>
-      <input type="radio" name="gender" value="male"> Male<br>
-      <input type="radio" name="gender" value="female"> Female<br>
-      名子:<br>
-      <input id="name" type="text" name="student"><br>
-      年齡:<br>
-      <input id="age" type="text" name="age"><br>
-      <input id="submit" type="submit" value="輸入">
+    性別:<br>
+    <input type="radio" name="gender" value="male"> Male<br>
+    <input type="radio" name="gender" value="female"> Female<br>
+    名子:<br>
+    <input id="name" type="text" name="student"><br>
+    年齡:<br>
+    <input id="age" type="text" name="age"><br>
+    <input id="submit" type="submit" value="輸入">
+    
+    <div id="changeModal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            <input id="name_change" type="text" name="student">
+            <input id="age_change" type="text" name="age">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <script>
       function last_find(){
         var length = studentCollection.find().length;
@@ -160,7 +179,7 @@
       $("body").on("click", ".change", function(event){
         var id = $(this).attr("data-id") / 1;
         console.log(db.collection("students").find({id: id})[0]);
-        
+        $("#changeModal").modal("show");
       });
     </script>
   </body>
