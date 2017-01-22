@@ -189,8 +189,9 @@
       });
       $("#change").click(change);
       function change(){
-        studentCollection.update({id:change_id},{name:$("#name_change").val()},{age:$("#age_change").val()});
+        studentCollection.update({id:change_id},{name:$("#name_change").val(),age:$("#age_change").val()});
         $("#changeModal").modal("hide");
+        saveInfo();
       }
     </script>
   </body>
