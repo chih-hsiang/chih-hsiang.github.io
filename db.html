@@ -16,12 +16,7 @@
         </tr>
       </thead>
       <tbody>
-          <tr class="template">
-            <td>{id}</td>
-            <td>{name}</td>
-            <td><a class="btn btn-default detail" data-id="{id}">detail</a></td>
-            <td><a class="btn btn-default delete" data-id="{id}">delete</a></td>
-          </tr>
+        
       </tbody>
     </table>
       性別:<br>
@@ -61,11 +56,8 @@
         if(last===undefined){
           last = 0;
         }
-        $(".template").html().replace(/{id}/g,s[length-1]['id']).trim();
-        $(".template").html().replace("{name}",s[length-1]['name']).trim();
         $("tbody").append("<tr><td>"+s[length-1]['id']+"</td><td>"+s[length-1]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[length-1]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[length-1]['id']+'">delete</a>'+"</td></tr>");
       }
-      $(".template").hide();
       var count = 0;
       var stuNum = 0;
       var names = ["apple","pen","pineapple","ppap","fool"];
