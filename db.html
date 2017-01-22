@@ -180,7 +180,9 @@
       });
       $("body").on("click", ".change", function(event){
         var id = $(this).attr("data-id") / 1;
-        console.log(db.collection("students").find({id: id})[0]);
+        var s = db.collection("students").find({id: id})[0];
+        $("#name_change").val(s.name);
+        $("#age_change").val(s.age)
         $("#changeModal").modal("show");
       });
     </script>
