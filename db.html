@@ -44,7 +44,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button id="change" type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
@@ -57,6 +57,7 @@
           last = 0;
         }
       }
+      var change_id;
       var last = 0;
       function rnd(min, max) {
         return Math.floor(Math.random() * max) + min;
@@ -182,9 +183,15 @@
         var id = $(this).attr("data-id") / 1;
         var s = db.collection("students").find({id: id})[0];
         $("#name_change").val(s.name);
-        $("#age_change").val(s.age)
+        $("#age_change").val(s.age);
+        change_id = id;
         $("#changeModal").modal("show");
       });
+      $("#change").click(change);
+      function change(){
+        studentColletion.update({id:change_id},{name:$("#name_change").val()},{age:$("#age_change").val()});
+        $("#changeModal").modal("hide");
+      }
     </script>
   </body>
 </html>
