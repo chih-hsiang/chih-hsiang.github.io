@@ -150,6 +150,7 @@
         }
       });
       $("body").on("click", ".change", function(event){
+        var id = $(this).attr("data-id") / 1;
         console.log(db.collection("students").find({id: id}));
         
       });
