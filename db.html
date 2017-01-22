@@ -70,7 +70,7 @@
       var scoreCollection = db.collection('scores');
       loadInfo();
       function newStudent(num){
-        for(var i = 1;i <= num;i = i+1){
+        for(var i = last+1;i <= last+num;i = i+1){
           var Stu = new stu(i);
           stuNum = stuNum + 1;
           studentCollection.insert(Stu);
@@ -81,6 +81,10 @@
         for(var i = 0;i < num;i = i+1){
           var Score = new score();
           scoreCollection.insert(Score);
+        }
+        last = studentCollection.find()[length-1].id;
+        if(last===undefined){
+          last = 0;
         }
         saveInfo();
       }
@@ -146,7 +150,7 @@
         }
       });
       $("body").on("click", ".change", function(event){
-        
+        console.log(db.collection("students").find({id: id}));
         
       });
     </script>
