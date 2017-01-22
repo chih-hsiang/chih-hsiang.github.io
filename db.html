@@ -29,6 +29,13 @@
       <input id="age" type="text" name="age"><br>
       <input id="submit" type="submit" value="輸入">
     <script>
+      function last_find(){
+        var length = studentCollection.find().length;
+        last = studentCollection.find()[length-1].id;
+        if(last===undefined){
+          last = 0;
+        }
+      }
       var last = 0;
       function rnd(min, max) {
         return Math.floor(Math.random() * max) + min;
@@ -82,6 +89,7 @@
           var Score = new score();
           scoreCollection.insert(Score);
         }
+        var length = studentCollection.find().length;
         last = studentCollection.find()[length-1].id;
         if(last===undefined){
           last = 0;
