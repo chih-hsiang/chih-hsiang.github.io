@@ -57,7 +57,6 @@
           last = 0;
         }
       }
-      var change_s;
       var change_id;
       var last = 0;
       function rnd(min, max) {
@@ -195,8 +194,9 @@
         $("#changeModal").modal("hide");
         saveInfo();
         $("tbody").html("");
+        var s = studentCollection.find();
         for(var i = 0;i < studentCollection.find().length;i = i+1){
-          $("tbody").append("<tr><td>"+change_s[i]['id']+"</td><td>"+change_s[i]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+change_s[i]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+change_s[i]['id']+'">delete</a>'+"</td><td>"+'<a class="btn btn-default change" data-id="'+change_s[i]['id']+'">change</a>'+"</td></tr>");
+          $("tbody").append("<tr><td>"+s[i]['id']+"</td><td>"+s[i]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[i]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[i]['id']+'">delete</a>'+"</td><td>"+'<a class="btn btn-default change" data-id="'+s[i]['id']+'">change</a>'+"</td></tr>");
         }
       }
     </script>
