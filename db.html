@@ -13,6 +13,7 @@
           <td>姓名</td>
           <td></td>
           <td></td>
+          <td></td>
         </tr>
       </thead>
       <tbody>
@@ -56,7 +57,7 @@
         if(last===undefined){
           last = 0;
         }
-        $("tbody").append("<tr><td>"+s[length-1]['id']+"</td><td>"+s[length-1]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[length-1]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[length-1]['id']+'">delete</a>'+"</td></tr>");
+        $("tbody").append("<tr><td>"+s[length-1]['id']+"</td><td>"+s[length-1]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[length-1]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[length-1]['id']+'">delete</a>'+"</td><td>"+'<a class="btn btn-default change" data-id="'+s[length-1]['id']+'">change</a>'+"</td></tr>");
       }
       var count = 0;
       var stuNum = 0;
@@ -119,7 +120,7 @@
         var s = studentCollection.find();
         if(count >= 2){
         for(var i = 0;i < studentCollection.find().length;i = i+1){
-          $("tbody").append("<tr><td>"+s[i]['id']+"</td><td>"+s[i]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[i]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[i]['id']+'">delete</a>'+"</td></tr>");
+          $("tbody").append("<tr><td>"+s[i]['id']+"</td><td>"+s[i]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[i]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[i]['id']+'">delete</a>'+"</td><td>"+'<a class="btn btn-default change" data-id="'+s[i]['id']+'">change</a>'+"</td></tr>");
           }
           console.log("學生人數:"+studentCollection.find().length);
           console.log("分數總量:"+scoreCollection.find().length);
@@ -142,6 +143,10 @@
           scoreCollection.remove({id: id});
           $(this).closest("tr").remove();
           saveInfo();
+        }
+      });
+      $("body").on("click", ".change", function(event){
+        
         }
       });
     </script>
