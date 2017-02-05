@@ -27,12 +27,12 @@
     <input id="name" type="text" name="student"><br>
     年齡:<br>
     <input id="age" type="text" name="age"><br>
-    <input id="submit" type="submit" value="輸入">
+    <input id="submit" type="submit" value="輸入"><br>
     
     年齡大於等於
     <input id="min" type="text">
     小於
-    <input id="max" type="text">
+    <input id="max" type="text"><br>
     <input id="search" type="submit" value="搜尋">
     
     <div id="changeModal" class="modal fade" tabindex="-1" role="dialog">
@@ -208,7 +208,10 @@
       $("#search").click(search);
       function search(){
         var s = studentCollection.find({age:{$gte:$("#min").val(),$lt:$("#max").val()}});
-        console.log(s);
+        ("tbody").html("");
+        for(i = 0;i < s.length;i+=1){
+            $("tbody").append("<tr><td>"+s[i]['id']+"</td><td>"+s[i]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[i]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[i]['id']+'">delete</a>'+"</td><td>"+'<a class="btn btn-default change" data-id="'+s[i]['id']+'">change</a>'+"</td></tr>");
+        }
       }
     </script>
   </body>
