@@ -202,7 +202,7 @@
         saveInfo();
         $("tbody").html("");
         var s = studentCollection.find();
-        for(var i = 0;i < studentCollection.find().length;i = i+1){
+        for(var i = 0;i < s.find().length;i = i+1){
           $("tbody").append("<tr><td>"+s[i]['id']+"</td><td>"+s[i]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[i]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[i]['id']+'">delete</a>'+"</td><td>"+'<a class="btn btn-default change" data-id="'+s[i]['id']+'">change</a>'+"</td></tr>");
         }
       }
@@ -222,6 +222,16 @@
         $("tbody").html("");
         for(i = 0;i < s.length;i+=1){
             $("tbody").append("<tr><td>"+s[i]['id']+"</td><td>"+s[i]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[i]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[i]['id']+'">delete</a>'+"</td><td>"+'<a class="btn btn-default change" data-id="'+s[i]['id']+'">change</a>'+"</td></tr>");
+        }
+        $("#max").val("");
+        $("#min").val("");
+      }
+      $("#back").click(back)
+      function back(){
+        $("tbody").html("");
+        var s = studentCollection.find();
+        for(var i = 0;i < s.length;i = i+1){
+          $("tbody").append("<tr><td>"+s[i]['id']+"</td><td>"+s[i]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[i]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[i]['id']+'">delete</a>'+"</td><td>"+'<a class="btn btn-default change" data-id="'+s[i]['id']+'">change</a>'+"</td></tr>");
         }
       }
     </script>
