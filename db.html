@@ -208,6 +208,7 @@
       $("#search").click(search);
       function search(){
         var s = studentCollection.find({age:{$gte:$("#min").val(),$lt:$("#max").val()}});
+        console.log(s);
         $("tbody").html("");
         for(i = 0;i < s.length;i+=1){
             $("tbody").append("<tr><td>"+s[i]['id']+"</td><td>"+s[i]['name']+"</td><td>"+'<a class="btn btn-default detail" data-id="'+s[i]['id']+'">detail</a>'+"</td><td>"+'<a class="btn btn-default delete" data-id="'+s[i]['id']+'">delete</a>'+"</td><td>"+'<a class="btn btn-default change" data-id="'+s[i]['id']+'">change</a>'+"</td></tr>");
