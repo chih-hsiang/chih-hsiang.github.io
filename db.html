@@ -27,8 +27,14 @@
     <input id="name" type="text" name="student"><br>
     年齡:<br>
     <input id="age" type="text" name="age"><br>
-    <input id="submit" type="submit" value="輸入"><hr>
-    
+    <input id="submit" type="submit" value="輸入">
+    班級:<br>
+    <select id="room" name="room">
+      <option value="0">甲</option>
+      <option value="1">乙</option>
+      <option value="2">丙</option>
+    </select>
+    <hr>
     年齡大於等於
     <input id="min" type="text">
     小於
@@ -81,7 +87,7 @@
           alert("資料不足");
           return;
         }
-        var Stu = new subStu($("#name").val(),gender,$("#age").val(),last+1);
+        var Stu = new subStu($("#name").val(),gender,$("#age").val(),rooms[$("#room").val()/1],last+1);
         studentCollection.insert(Stu);
         saveInfo();
         $("#name").val("");
@@ -100,6 +106,7 @@
       var names = ["apple","pen","pineapple","ppap","fool"];
       var subjects = ["English","Math","Chinese","History"];
       var genders = ["male","female"];
+      var rooms = ["甲","乙","丙"]
       var fdb = new ForerunnerDB();
       var db = fdb.db("04db2");
       var studentCollection = db.collection('students');
@@ -111,13 +118,6 @@
           stuNum = stuNum + 1;
           studentCollection.insert(Stu);
         }
-        saveInfo();
-      }
-      function newScore(num){
-        for(var i = 0;i < num;i = i+1){
-          var Score = new score();
-          scoreCollection.insert(Score);
-        }
         var length = studentCollection.find().length;
         last = studentCollection.find()[length-1].id;
         if(last===undefined){
@@ -125,17 +125,25 @@
         }
         saveInfo();
       }
+      function newScore(num){
+        for(var i = 0;i < num;i = i+1){
+          var Score = new score();
+          scoreCollection.insert(Score);
+        }
+        saveInfo();
+      }
       function subStu(name,gender,age,id){
         this.age = age;
         this.name = name;
         this.gender = gender;
+        this.room = rooms;
         this.id = id;
-        
       }
       function stu(id){
         this.age = rnd(0,100);
         this.name = names[rnd(0,4)];
         this.gender = genders[rnd(0,1)];
+        this.room = rooms[rnd(0,2)]
         this.id = id;
       }
       function score(){
