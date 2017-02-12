@@ -224,8 +224,7 @@
         var search_room = [];
         for(i = 0;i < room_check.length;i+=1){
           if($(room_check[i]).prop("checked")){
-            search_room.push($(room_check[i].val()));
-            $(room_check[i].val(""))
+            search_room.push($(room_check[i]).val());
           }
         }
         if($("#min").val() == ""){
