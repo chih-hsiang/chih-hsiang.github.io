@@ -225,10 +225,9 @@
         for(i = 0;i < room_check.length;i+=1){
           if($(room_check[i]).prop("checked")){
             search_room.push(rooms[$(room_check[i]).val()/1]);
-            $(room_checked[i]).prop("checked",false);
+            $(room_check[i]).prop("checked",false);
           }
         }
-        console.log(search_room);
         if($("#min").val() == ""){
             if($("#max").val() == ""){
                 return;
