@@ -39,6 +39,10 @@
     <input id="min" type="text">
     小於
     <input id="max" type="text"><br>
+    班級<br>
+    <input type="checkbox" class="rooms" value="0">甲<br>
+    <input type="checkbox" class="rooms" value="1">乙<br>
+    <input type="checkbox" class="rooms" value="2">丙<br>
     <input id="search" type="submit" value="搜尋">
     <input id="back" type="submit" value="復原">
     
@@ -216,16 +220,24 @@
       }
       $("#search").click(search);
       function search(){
+        var room_check = $(".room");
+        var search_room = [];
+        for(i = 0;i < room_check.length;i+=1){
+          if($(room_check[i]).prop("checked")){
+            search_room.push($(room_check[i].val()));
+            $(room_check[i].val(""))
+          }
+        }
         if($("#min").val() == ""){
             if($("#max").val() == ""){
                 return;
             }else{
-                var s =studentCollection.find({age:{$gte:$("#max").val()/1}});
+                var s =studentCollection.find({age:{$gte:$("#max").val()/1},room:{$in:search_room}});
             }
         }else if($("#max").val() == ""){
-            var s =studentCollection.find({age:{$gte:$("#min").val()/1}});
+            var s =studentCollection.find({age:{$gte:$("#min").val()/1},room:{$in:search_room}});
         }else{
-            var s = studentCollection.find({age:{$gte:$("#min").val()/1,$lt:$("#max").val()/1}});
+            var s = studentCollection.find({age:{$gte:$("#min").val()/1,$lt:$("#max").val()/1},room:{$in:search_room}});
         }
         $("tbody").html("");
         for(i = 0;i < s.length;i+=1){
