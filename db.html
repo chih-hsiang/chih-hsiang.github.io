@@ -231,6 +231,7 @@
         if($("#min").val() == ""){
             if($("#max").val() == ""){
                 var s =scoreCollection.find({room:{$in:search_room}});
+                console.log(s);
             }else{
                 var s =studentCollection.find({age:{$gte:$("#max").val()/1},room:{$in:search_room}});
             }
