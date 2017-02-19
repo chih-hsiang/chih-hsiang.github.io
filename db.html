@@ -230,7 +230,7 @@
         }
         if($("#min").val() == ""){
             if($("#max").val() == ""){
-                return;
+                var s =scoreCollection.find({room:{$in:search_room}});
             }else{
                 var s =studentCollection.find({age:{$gte:$("#max").val()/1},room:{$in:search_room}});
             }
