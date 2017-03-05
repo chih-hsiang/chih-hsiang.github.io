@@ -157,6 +157,14 @@
         this.subject = subjects[rnd(0,3)];
         this.number = rnd(0,100);
       }
+      function teacher(name,phone){
+        this.name = name;
+        this.phone = phone;
+      }
+      function parents(name,phone){
+        this.name = name;
+        this.phone = phone;
+      }
       function saveInfo(){
         studentCollection.save();
         scoreCollection.save();
