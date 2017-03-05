@@ -118,7 +118,7 @@
           alert("資料不足");
           return;
         }
-        var Stu = new subStu($("#name").val(),gender,$("#age").val(),rooms[$("#room").val()/1],last+1,teacherCollection.find({_id:{$in:[$("#teacher").val()]}}),parentsCollection.find({_id:{$in:[$("#parents").val()]}}));
+        var Stu = new subStu($("#name").val(),gender,$("#age").val(),rooms[$("#room").val()/1],last+1,$("#teacher").val(),$("#parents").val());
         studentCollection.insert(Stu);
         saveInfo();
         $("#name").val("");
