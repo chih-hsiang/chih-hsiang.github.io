@@ -33,7 +33,21 @@
       <option value="1">乙</option>
       <option value="2">丙</option>
     </select><br>
+    老師:<br>
+    <select name="teacher" id="teacher">
+      <option value="34cb3dcd5df3a00">salad</option>
+      <option value="2afe45e09bd6500">tomato</option>
+      <option value="24a51de6e4de160">salad</option>
+      <option value="3d8be274c4fe700">tomato</option>
+    </select><br>
+    家屬:<br>
+    <select name="parents" id="parents">
+      <option value="43d9c66b94c3f40">tomato</option>
+      <option value="42dee327ff50940">ice</option>
+      <option value="2553f43b15cfa20">ultra</option>
+    </select>
     <input id="submit" type="submit" value="輸入">
+
     <hr>
     年齡大於等於
     <input id="min" type="text">
@@ -170,6 +184,8 @@
         scoreCollection.save();
       }
       function loadInfo(){
+        teacherCollection.load();
+        parentsCollection.load();
         studentCollection.load(read);
         scoreCollection.load(read);
       }
