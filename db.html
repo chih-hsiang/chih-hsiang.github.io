@@ -228,16 +228,19 @@
             $(room_check[i]).prop("checked",false);
           }
         }
+        if(search_room == []){
+          search_room = rooms;
+        }
         if($("#min").val() == ""){
             if($("#max").val() == ""){
-                var s =studentCollection.find({room:{$in:search_room}});
+              var s =studentCollection.find({room:{$in:search_room}});
             }else{
-                var s =studentCollection.find({age:{$gte:$("#max").val()/1},room:{$in:search_room}});
+              var s =studentCollection.find({age:{$gte:$("#max").val()/1},room:{$in:search_room}});
             }
         }else if($("#max").val() == ""){
-            var s =studentCollection.find({age:{$gte:$("#min").val()/1},room:{$in:search_room}});
+          var s =studentCollection.find({age:{$gte:$("#min").val()/1},room:{$in:search_room}});
         }else{
-            var s = studentCollection.find({age:{$gte:$("#min").val()/1,$lt:$("#max").val()/1},room:{$in:search_room}});
+          var s = studentCollection.find({age:{$gte:$("#min").val()/1,$lt:$("#max").val()/1},room:{$in:search_room}});
         }
         $("tbody").html("");
         for(i = 0;i < s.length;i+=1){
