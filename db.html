@@ -105,7 +105,7 @@
           alert("資料不足");
           return;
         }
-        var Stu = new subStu($("#name").val(),gender,$("#age").val(),rooms[$("#room").val()/1],last+1);
+        var Stu = new subStu($("#name").val(),gender,$("#age").val(),rooms[$("#room").val()/1],last+1,teacherCollection.find({_id:{$in:[$("#teacher").val()]}}),parentsCollection.find({_id:{$in:[$("#parents").val()]}}));
         studentCollection.insert(Stu);
         saveInfo();
         $("#name").val("");
@@ -152,12 +152,14 @@
         }
         saveInfo();
       }
-      function subStu(name,gender,age,room,id){
+      function subStu(name,gender,age,room,id,teacher,parents){
         this.age = age;
         this.name = name;
         this.gender = gender;
         this.room = room;
         this.id = id;
+        this.teacher = teacher;
+        this.parents = parents;
       }
       function stu(id){
         this.age = rnd(0,100);
