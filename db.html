@@ -71,7 +71,20 @@
             名子:
             <input id="name_change" type="text" name="student">
             年齡:
-            <input id="age_change" type="text" name="age">
+            <input id="age_change" type="text" name="age"><br>
+            老師:<br>
+            <select name="" id="teacher_change">
+              <option value="34cb3dcd5df3a00">salad</option>
+              <option value="2afe45e09bd6500">tomato</option>
+              <option value="24a51de6e4de160">salad</option>
+              <option value="3d8be274c4fe700">tomato</option>
+            </select><br>
+            家屬:<br>
+            <select name="" id="parents_change">
+              <option value="43d9c66b94c3f40">tomato</option>
+              <option value="42dee327ff50940">ice</option>
+              <option value="2553f43b15cfa20">ultra</option>
+            </select>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -237,7 +250,7 @@
       });
       $("#change").click(change);
       function change(){
-        studentCollection.update({id:change_id},{name:$("#name_change").val(),age:$("#age_change").val()/1});
+        studentCollection.update({id:change_id},{name:$("#name_change").val(),age:$("#age_change").val()/1,teacher:$("#teacher_change").val(),parents:$("parents_change").val()});
         $("#changeModal").modal("hide");
         saveInfo();
         $("tbody").html("");
