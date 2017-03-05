@@ -115,6 +115,8 @@
       var db = fdb.db("04db2");
       var studentCollection = db.collection('students');
       var scoreCollection = db.collection('scores');
+      var teacherCollection = db.collection('teachers');
+      var parentsCollection = db.collection('parentses');
       loadInfo();
       function newStudent(num){
         for(var i = last+1;i <= last+num;i = i+1){
