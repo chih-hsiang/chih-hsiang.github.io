@@ -4,6 +4,9 @@
 .img{
   height:200px;
 }
+.img_big{
+  height:450px;
+}
 #profile{
   background-color:#ffff00;
   padding:20px;
